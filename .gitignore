@@ -1,0 +1,14 @@
+# pixi environments
+.pixi/*
+!.pixi/config.toml
+
+# secrets and exports
+.env
+exports/
+*.csv
+*.xlsx
+build/
+dist/
+__pycache__/
+*.spec
+*.swp
