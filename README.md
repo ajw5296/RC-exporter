@@ -1,7 +1,7 @@
 # RC-exporter
 
 Desktop app to download REDCap reports (or a project's full dataset) through the REDCap API.
-Built with tkinter + [PyCap](https://github.com/redcap-tools/PyCap); runs on Ubuntu and Windows.
+Built with tkinter + [PyCap](https://github.com/redcap-tools/PyCap); runs on Ubuntu, Windows, and macOS.
 
 ## Use
 
@@ -20,10 +20,10 @@ The token is never written to disk. Exports usually contain PHI: save them only 
 ## Build a standalone executable
 
 ```
-pixi run build      # -> dist/RC-Exporter (Linux) or dist\RC-Exporter.exe (Windows)
+pixi run build      # -> dist/RC-Exporter (Linux), dist\RC-Exporter.exe (Windows), dist/RC-Exporter.app (macOS)
 ```
 
-PyInstaller does not cross-compile: build the Windows `.exe` on Windows (`pixi install`, then `pixi run build`).
+PyInstaller does not cross-compile: build on each OS you ship to (`pixi install`, then `pixi run build`).
 
 ## Tests
 

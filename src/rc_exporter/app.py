@@ -137,6 +137,15 @@ class App(ttk.Frame):
 
     # --- connect ---
     def on_connect(self):
+        # Accept any REDCap page URL; show the user the API URL we'll actually use.
+        try:
+            api_url, url_pid = api.normalize_api_url(self.url.get())
+        except api.ExportError as e:
+            messagebox.showerror("API URL", str(e))
+            return
+        self.url.set(api_url)
+        if url_pid and not self.pid.get().strip():
+            self.pid.set(str(url_pid))
         pid_text = self.pid.get().strip()
         if not pid_text.isdigit():
             messagebox.showerror("Project ID", "Project ID must be a number.")
